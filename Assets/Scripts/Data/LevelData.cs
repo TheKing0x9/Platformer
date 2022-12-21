@@ -16,5 +16,9 @@ namespace Platformer.Data {
         [SerializeField] private List<LevelDetail> m_levels;
 
         public LevelDetail this [int index] { get => m_levels[index]; }
+        
+        public int GetCurrentHighScore() {
+            return this[currentLevel].highScore;
+        }
     }
 }   

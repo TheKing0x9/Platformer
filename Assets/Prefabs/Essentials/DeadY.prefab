@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 623361162108025623}
   - component: {fileID: 623361162108025622}
   m_Layer: 0
-  m_Name: DeadZ
+  m_Name: DeadY
   m_TagString: DeadZ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

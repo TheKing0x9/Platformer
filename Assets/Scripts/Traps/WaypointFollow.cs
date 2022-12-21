@@ -4,48 +4,63 @@ using Platformer.Managers;
 
 namespace Platformer.Traps {
     public class WaypointFollow : MonoBehaviour {
-        [SerializeField] private float m_speed = 2f;
-        [SerializeField] private float m_waitTime = 0.1f;
-        [SerializeField] private bool m_loop = false;
+        [SerializeField] protected float _speed = 2f;
+        [SerializeField] protected float _waitTime = 0.1f;
+        [SerializeField] protected bool _loop = false;
+        [SerializeField] protected bool _animate = true;
 
         [Space]
-        [SerializeField] private WaypointManager m_waypoints;
+        [SerializeField] protected WaypointManager _waypoints;
 
-        private int m_currentIndex = 0;
-        private int m_direction = 1;
+        protected int _currentIndex = 0;
+        protected int _direction = 1;
+
+        private Animator m_animator;
+        private int onParamID;
+
+        private void Awake() {
+            m_animator = GetComponent<Animator>();
+            onParamID = Animator.StringToHash("On");
+        }
 
         private void Start() {
-            Vector3 position = m_waypoints[m_currentIndex].transform.position;;
+            Vector3 position = _waypoints[_currentIndex].transform.position;;
             position.z = transform.position.z;
             transform.position = position;
 
             MoveToNextWaypoint();
         }
 
-        private void MoveToNextWaypoint() {
-            m_currentIndex = IncrementIndex();
-            Transform target = m_waypoints[m_currentIndex].transform;
+        protected virtual void MoveToNextWaypoint() {
+            _currentIndex = IncrementIndex();
+            Transform target = _waypoints[_currentIndex].transform;
 
-            Vector3 to = target.localPosition;
+            Vector3 to = target.position;
             to.z = transform.position.z;
 
-            float duration = (transform.position - to).magnitude / m_speed;
-            Tween.Position(transform, to, duration, m_waitTime, Tween.EaseLinear, Tween.LoopType.None, null, MoveToNextWaypoint);
+            if (_animate) m_animator.SetBool(onParamID, false);
+
+            float duration = (transform.position - to).magnitude / _speed;
+            Tween.Position(transform, to, duration, _waitTime, Tween.EaseLinear, Tween.LoopType.None, OnTweenStart, MoveToNextWaypoint);
         }
 
-        private int IncrementIndex() {
-            int newIndex = m_currentIndex + m_direction;
+        protected void OnTweenStart() {
+            if (_animate) m_animator.SetBool(onParamID, true);
+        }
 
-            if (newIndex > m_waypoints.Count - 1) {
-                if (m_loop) newIndex = 0;
+        protected virtual int IncrementIndex() {
+            int newIndex = _currentIndex + _direction;
+
+            if (newIndex > _waypoints.Count - 1) {
+                if (_loop) newIndex = 0;
                 else {
                     newIndex--;
-                    m_direction *= -1;
+                    _direction *= -1;
                 }
             }
 
             if (newIndex < 0) {
-                m_direction *= -1;
+                _direction *= -1;
                 newIndex= 0;
             }
 
