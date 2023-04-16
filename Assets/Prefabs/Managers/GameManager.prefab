@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96cabdce12bc44c44999945c7992709d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_scoreDecrementModifier: 20
+  m_scoreText: {fileID: 0}
+  m_highScoreText: {fileID: 0}
+  m_player: {fileID: 0}

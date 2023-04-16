@@ -11,6 +11,7 @@ namespace Platformer.Traps {
 
         [Space]
         [SerializeField] protected WaypointManager _waypoints;
+        [SerializeField] protected int _offset;
 
         protected int _currentIndex = 0;
         protected int _direction = 1;
@@ -24,6 +25,8 @@ namespace Platformer.Traps {
         }
 
         private void Start() {
+            if (_offset < _waypoints.Count) _currentIndex = _offset;
+
             Vector3 position = _waypoints[_currentIndex].transform.position;;
             position.z = transform.position.z;
             transform.position = position;

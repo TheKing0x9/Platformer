@@ -27,7 +27,17 @@ namespace Platformer.Managers {
 
         public void LoadNextLevel() {
             int nextLevel = ++m_levelData.currentLevel;
-            LoadLevel(m_levelData[nextLevel].sceneName);
+            // this value is currently hardcoded and needs to be fixed
+            string sceneName = "Menu";
+
+            // handle out of bounds exception
+            if (nextLevel >= m_levelData.Length) {
+                m_levelData.currentLevel = 0;
+            } else {
+                sceneName = m_levelData[nextLevel].sceneName;
+            }
+
+            LoadLevel(sceneName);
         }
 
         public void LoadLevel(string nextLevel) {

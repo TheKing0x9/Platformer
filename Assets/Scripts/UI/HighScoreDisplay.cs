@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 using Platformer.Data;
 
@@ -7,14 +7,14 @@ namespace Platformer.UI {
     public class HighScoreDisplay : MonoBehaviour {
         [SerializeField] private LevelData m_levelData;
 
-        private TextMeshPro m_mesh;
+        private Text m_text;
 
         private void Awake() {
-            m_mesh = GetComponent<TextMeshPro>();
+            m_text = GetComponent<Text>();
         }
 
         private void Start() {
-            m_mesh.text = m_levelData.GetCurrentHighScore().ToString() + " Pts";
+            m_text.text = m_levelData.GetCurrentHighScore().ToString() + " Pts";
         }
     }
 }

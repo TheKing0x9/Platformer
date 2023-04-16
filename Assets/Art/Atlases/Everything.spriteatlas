@@ -163,6 +163,8 @@ SpriteAtlas:
   - {fileID: -953560442851353963, guid: 32073492bca3e454b924df04913b43c1, type: 3}
   - {fileID: -3450976776972242761, guid: 32073492bca3e454b924df04913b43c1, type: 3}
   - {fileID: 7062579536633761780, guid: 32073492bca3e454b924df04913b43c1, type: 3}
+  - {fileID: 21300000, guid: 70b629a2b26795e4fbf0713f90706663, type: 3}
+  - {fileID: 21300000, guid: 227bf8c283b19224bbcf82b5c49f92c0, type: 3}
   - {fileID: 873812864866779284, guid: 898133d2d8fb46448845fb2d1c00d368, type: 3}
   - {fileID: -991449457031105569, guid: 898133d2d8fb46448845fb2d1c00d368, type: 3}
   - {fileID: 5273281925071742904, guid: 898133d2d8fb46448845fb2d1c00d368, type: 3}
@@ -201,6 +203,7 @@ SpriteAtlas:
   - {fileID: -3939753913355333839, guid: 0a55a3545f8adaa4dafa3db70bd8d01b, type: 3}
   - {fileID: 6301718139250434432, guid: 0a55a3545f8adaa4dafa3db70bd8d01b, type: 3}
   - {fileID: 21300000, guid: b2532064750580740a4734b810d0ba88, type: 3}
+  - {fileID: 21300000, guid: 9ea24d74a0d09e741b79f228ed77e098, type: 3}
   - {fileID: 5504277486448943824, guid: 4bb1468499bcc9b42ab886a58eafee6d, type: 3}
   - {fileID: -6426412849335849376, guid: 4bb1468499bcc9b42ab886a58eafee6d, type: 3}
   - {fileID: 1273466696024107936, guid: 4bb1468499bcc9b42ab886a58eafee6d, type: 3}
@@ -912,6 +915,8 @@ SpriteAtlas:
   - Hit (32x32)_4
   - Hit (32x32)_5
   - Hit (32x32)_6
+  - Settings
+  - Button
   - HitSide (22x22)_2
   - HitSide (22x22)_1
   - HitSide (22x22)_0
@@ -950,6 +955,7 @@ SpriteAtlas:
   - Double Jump (32x32)_4
   - Double Jump (32x32)_5
   - Grey Off
+  - ButtonBig
   - Break_1
   - Break_0
   - Break_3

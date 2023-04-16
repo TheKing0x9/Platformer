@@ -6,7 +6,6 @@ using Waypoint = Platformer.Utilities.Waypoint;
 namespace Platformer.Managers {
     public class WaypointManager : MonoBehaviour {
         [SerializeField] private List<Waypoint> m_waypoints;
-        [SerializeField] private List<Vector3> m_bakedWaypoints;
 
         [SerializeField] private bool m_visualizePath = true;
         public bool visualizePath { get => m_visualizePath; }
