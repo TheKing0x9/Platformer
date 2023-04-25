@@ -1,6 +1,7 @@
 using UnityEngine;
 
 using Platformer.Managers;
+using Platformer.Audio;
 
 namespace Platformer.Pickups {
     public class ScorePickup : BasePickup {
@@ -8,6 +9,7 @@ namespace Platformer.Pickups {
         protected override void OnPickupCollected(GameObject player) {
             // Add Score to Game Manager
             GameManager.instance.AddScore(m_score);
+            AudioManager.instance.PlayPickupSound();
         }
     }
 }

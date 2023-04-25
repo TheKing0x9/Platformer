@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62825e0fdadb1b64d88048052e18e300, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  currentLevel: 0
+  currentLevel: 1
   m_levels:
   - sceneName: Level1
-    highScore: 0
-    levelMusic: {fileID: 8300000, guid: 62bbb613aa276f44688c2a7f301e0630, type: 3}
+    highScore: 145
+    levelMusic: {fileID: 8300000, guid: 40b3676413e4f2d44869511cebbfb7db, type: 3}
   - sceneName: Level2
-    highScore: 0
-    levelMusic: {fileID: 8300000, guid: 88f079453d0b5f84786332d1bc2ba8d9, type: 3}
+    highScore: 237
+    levelMusic: {fileID: 8300000, guid: 8e8e53898994a1d479484318b0e3014f, type: 3}
+  - sceneName: Level3
+    highScore: 475
+    levelMusic: {fileID: 8300000, guid: 2cf03fb25b755df4b97ed93b8a23d666, type: 3}

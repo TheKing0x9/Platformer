@@ -14,7 +14,7 @@ namespace Platformer.UI {
         }
 
         private void Start() {
-            m_text.text = m_levelData.GetCurrentHighScore().ToString() + " Pts";
+            m_text.text = "High Score : " + m_levelData.GetCurrentHighScore().ToString() + " Pts";
         }
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 
 using Platformer.Managers;
+using Platformer.Audio;
 
 namespace Platformer.Player {
     public class PlayerHealth : MonoBehaviour {
@@ -46,6 +47,8 @@ namespace Platformer.Player {
             m_rigidbody.velocity = new Vector2(2f * direction, 10f);
             m_rigidbody.constraints = RigidbodyConstraints2D.None;
             m_rigidbody.angularVelocity = 70f * -direction;
+
+            AudioManager.instance.PlayHitSound();
         }
     }
 }

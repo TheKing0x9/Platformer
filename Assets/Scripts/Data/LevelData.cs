@@ -12,7 +12,6 @@ namespace Platformer.Data {
     [CreateAssetMenu(fileName = "LevelData", menuName = "Platformer/LevelData")]
     public class LevelData : ScriptableObject {
         [ReadOnly] public int currentLevel;
-        
         [SerializeField] private List<LevelDetail> m_levels;
 
         public LevelDetail this [int index] { get => m_levels[index]; }

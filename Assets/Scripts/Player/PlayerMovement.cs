@@ -1,6 +1,7 @@
-
 using System.Collections;
 using UnityEngine;
+
+using Platformer.Audio;
 
 namespace Platformer.Player
 {
@@ -121,8 +122,9 @@ namespace Platformer.Player
                 Jump(Vector2.up * m_doubleJumpForce);
                 isDoubleJump = true;
             } else if (isJumping) {
-                if (m_input.jumpHeld)
-                    Jump(Vector2.up * m_jumpHoldForce, true);
+                if (m_input.jumpHeld) {
+                    m_rigidbody.velocity += new Vector2(0f, m_jumpHoldForce);
+                }
 
                 if (Time.time > m_jumpTime)
                     isJumping = false;
@@ -132,6 +134,8 @@ namespace Platformer.Player
         public void Jump(Vector2 velocity, bool additive = false) {
             m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, additive ? m_rigidbody.velocity.y : 0f );
             m_rigidbody.velocity += velocity;
+
+            AudioManager.instance.PlayJumpSound();
         }
 
         private void ClampVelocity() {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 using Platformer.Managers;
 
@@ -11,6 +12,8 @@ namespace Platformer.UI {
         [SerializeField] private Image m_volumeImage;
         [SerializeField] private Sprite m_volumeOn;
         [SerializeField] private Sprite m_volumeOff;
+
+        [SerializeField] private AudioMixer m_audioMixer;
 
         private bool volumeOn = true;
 
@@ -29,6 +32,9 @@ namespace Platformer.UI {
         public void OnVolumeClicked() {
             volumeOn = !volumeOn;
             SetVolumeSprite();
+
+            if (volumeOn) m_audioMixer.SetFloat("volume", 0f);
+            else m_audioMixer.SetFloat("volume", -60f);
         }
 
         private void SetVolumeSprite() {

@@ -3,6 +3,7 @@ using System.Collections;
 
 using Platformer.Player;
 using Platformer.Managers;
+using Platformer.Audio;
 
 namespace Platformer.Items {
     public class Checkpoint : MonoBehaviour {
@@ -27,6 +28,8 @@ namespace Platformer.Items {
 
             m_animator.SetTrigger(openParamID);
             StartCoroutine(LevelCompletedTimer());
+
+            AudioManager.instance.PlayVictorySound();
         }
 
         private IEnumerator LevelCompletedTimer() {
